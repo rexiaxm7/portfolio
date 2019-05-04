@@ -1,8 +1,13 @@
 import Vue from "vue";
+import BootstrapVue from 'bootstrap-vue'
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Skills from "./views/Skills.vue";
 
 Vue.use(Router);
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default new Router({
   mode: 'history',
@@ -20,6 +25,11 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
+    },
+    {
+      path: "/skills",
+      name: "skills",
+      component: Skills
     }
   ]
 });
